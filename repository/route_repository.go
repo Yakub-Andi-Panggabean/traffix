@@ -8,14 +8,12 @@ import(
 
 type RouteRepository interface{
 
-	FetchDuration(id string)(string,error)
+	FetchDuration(id string)(int,error)
 
 	Save(route *entity.Route)(bool,error)
 
-	Delete(id string)(bool,error)
-
 	Update(route *entity.Route)(bool,error)
 
-	FetchRoute(id string)(route *entity.Route,error)
+	FetchRoute(id string)(*entity.Route,error)
 
 }
